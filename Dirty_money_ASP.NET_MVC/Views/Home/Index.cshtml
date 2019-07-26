@@ -1,31 +1,98 @@
-﻿@{
+﻿@model Dirty_money_ASP.NET_MVC.Models.Data
+@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+<div>
+    @using (Html.BeginForm("Index","Home", FormMethod.Post))
+    {
+        <strong>Выберите должность</strong><br/>
+        <div id="drop">@Html.DropDownList("positions", ViewBag.pos as SelectList)</div>       
+        <table class="table">
+            <tr>
+                <th>Дены</th>
+                <th>КГ</th>
+                <th>Ставка</th>
+                <th>Заработок</th>
+            </tr>
+            <tr>
+                <td>@Html.Label("420 - 459:")</td>
+                <td>@Html.TextBox("tb440kg", null, new { @type = "number" })</td>
+                <td>@Html.TextBox("tb440rate", null, new { @type = "number" })</td>
+                <td>@Html.DisplayFor(e => e.tbCash1)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("460 - 549:")</td>
+                <td>@Html.TextBox("tb460kg")</td>
+                <td>@Html.TextBox("tb460rate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash2)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("550 - 600:")</td>
+                <td>@Html.TextBox("tb560kg")</td>
+                <td>@Html.TextBox("tb560rate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash3)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("601 - 999:")</td>
+                <td>@Html.TextBox("tb601kg")</td>
+                <td>@Html.TextBox("tb601rate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash4)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("1000 - 1800:")</td>
+                <td>@Html.TextBox("tb1000kg")</td>
+                <td>@Html.TextBox("tb1000rate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash5)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("600 - 850(Цвет):")</td>
+                <td>@Html.TextBox("tb600colorkg")</td>
+                <td>@Html.TextBox("tb600colorrate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash6)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("1000 - 1800(Цвет):")</td>
+                <td>@Html.TextBox("tb1000colorkg")</td>
+                <td>@Html.TextBox("tb1000colorrate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash7)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("1000 - 1800(4й):")</td>
+                <td>@Html.TextBox("tb1000ex4kg")</td>
+                <td>@Html.TextBox("tb1000ex4rate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash8)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("1000 - 1800(4й, Цв):")</td>
+                <td>@Html.TextBox("tb1000ex4colorkg")</td>
+                <td>@Html.TextBox("tb1000ex4colorrate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash9)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("1500 - 1700(4й, ФБР):")</td>
+                <td>@Html.TextBox("tb1500fbrkg")</td>
+                <td>@Html.TextBox("tb1500fbrrate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash10)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("1500 - 1700(4й, ФБР, Цв):")</td>
+                <td>@Html.TextBox("tb1500fbrcolorkg")</td>
+                <td>@Html.TextBox("tb1500fbrcolorrate")</td>
+                <td>@Html.DisplayFor(e => e.tbCash11)</td>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>@Html.Label("Итого:")</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>@Html.DisplayFor(e => e.Total)</td>
+            </tr>
+        </table>
+        <input id="button" type="submit" value="Рассчитать"/>
+    }
 </div>
