@@ -6,7 +6,7 @@
     @using (Html.BeginForm("Index","Home", FormMethod.Post))
     {
         <strong>Выберите должность</strong><br/>
-        <div id="drop">@Html.DropDownList("positions", ViewBag.pos as SelectList)</div>       
+        <div>@Html.DropDownList("positions", ViewBag.pos as SelectList, new { @id = "drop" })</div>       
         <table class="table">
             <tr>
                 <th>Дены</th>
@@ -17,7 +17,7 @@
             <tr>
                 <td>@Html.Label("420 - 459:")</td>
                 <td>@Html.TextBox("tb440kg", null, new { @type = "number" })</td>
-                <td>@Html.TextBox("tb440rate", null, new { @type = "number" })</td>
+                <td>@Html.TextBox("tb440rate")</td>
                 <td>@Html.DisplayFor(e => e.tbCash1)</td>
             </tr>
             <tr>

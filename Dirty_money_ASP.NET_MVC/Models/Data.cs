@@ -9,7 +9,7 @@ namespace Dirty_money_ASP.NET_MVC.Models
     public class Data
     {
         //[RegularExpression("^[0-9]*$", ErrorMessage = "Please enter valid date.")]
-        //[DataType(DataType.PhoneNumber, ErrorMessage = "Not a number")]
+        //[DataType(DataType.Currency, ErrorMessage = "Not a number")]
         public double tb440kg { get; set; }
         public double tb440rate { get; set; }
         public double tb460kg { get; set; }

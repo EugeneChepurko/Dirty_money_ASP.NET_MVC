@@ -19,9 +19,10 @@
 
 /* Set width on the form input elements since they're 100% wide by default */
 select,
-textarea { 
+textarea {
     max-width: 280px;
 }
+
 #button {
     width: 450px;
     height: 40px;
@@ -31,19 +32,23 @@ textarea {
     border-radius: 6px;
     box-shadow: 0 3px #999;
 }
+
 input {
-    max-width: 280px;
+    /*max-width: 280px;*/
     border-radius: 3px;
     transition: 2.0s all;
-} 
-input:hover {
-    background-color: #c8c8c8;
 }
+
+    input:hover {
+        background-color: #c8c8c8;
+    }
+
 #drop {
-    color: #fff;
-    font-size: 20px;
     padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #cc2a41;
+    border-radius: 5px 12px;
+    background-color: #e0e0e0;
     font-weight: bold;
+}
+th {
+    font-size: 16px;
 }
