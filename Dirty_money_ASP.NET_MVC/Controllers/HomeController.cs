@@ -50,7 +50,7 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
         const double mach1500_1700_color_FBR_4EX = 0.56448;
         const double oper1500_1700_color_FBR_4EX = 0.38925;
 
-        public static Data InitialData()
+        private static Data InitialData()
         {
             if (data == null)
             {
@@ -68,7 +68,7 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Data data, FormCollection form)
+        public ActionResult Index(Data data)
         {
             SelectList positions = new SelectList(positionsList);
             ViewBag.pos = positions;
@@ -84,7 +84,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash1 = result1;
                     sumSalary += data.tbCash1;
                     data.Total = sumSalary;
-                    //HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -95,7 +94,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash1 = result1;
                     sumSalary += data.tbCash1;
                     data.Total = sumSalary;
-                    //HomeController.data = data;
                 }
             }
             //460 - 549
@@ -107,7 +105,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash2 = result2;
                     sumSalary += data.tbCash2;
                     data.Total = sumSalary;
-                   // Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -118,7 +115,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash2 = result2;
                     sumSalary += data.tbCash2;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             //550 - 600
@@ -130,7 +126,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash3 = result3;
                     sumSalary += data.tbCash3;
                     data.Total = sumSalary;
-                   // Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -141,7 +136,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash3 = result3;
                     sumSalary += data.tbCash3;
                     data.Total = sumSalary;
-                   // Session["mydata"] = HomeController.data = data;
                 }
             }
             //601 - 999
@@ -153,7 +147,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash4 = result4;
                     sumSalary += data.tbCash4;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -164,7 +157,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash4 = result4;
                     sumSalary += data.tbCash4;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             //1000 - 1800
@@ -176,7 +168,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash5 = result5;
                     sumSalary += data.tbCash5;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -187,7 +178,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash5 = result5;
                     sumSalary += data.tbCash5;
                     data.Total = sumSalary;
-                   // Session["mydata"] = HomeController.data = data;
                 }
             }
             //600 - 850 color
@@ -199,7 +189,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash6 = result6;
                     sumSalary += data.tbCash6;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -210,7 +199,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash6 = result6;
                     sumSalary += data.tbCash6;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             //1000 - 1800 color
@@ -222,7 +210,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash7 = result7;
                     sumSalary += data.tbCash7;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -233,7 +220,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash7 = result7;
                     sumSalary += data.tbCash7;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             //1000 - 1800 4ex
@@ -245,7 +231,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash8 = result8;
                     sumSalary += data.tbCash8;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -256,7 +241,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash8 = result8;
                     sumSalary += data.tbCash8;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }
             //1000 - 1800 4ex color
@@ -268,7 +252,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash9 = result9;
                     sumSalary += data.tbCash9;
                     data.Total = sumSalary;
-                   // Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -279,7 +262,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash9 = result9;
                     sumSalary += data.tbCash9;
                     data.Total = sumSalary;
-                   // Session["mydata"] = HomeController.data = data;
                 }
             }
             //1500 - 1700 4ex FBR
@@ -291,7 +273,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash10 = result10;
                     sumSalary += data.tbCash10;
                     data.Total = sumSalary;
-                  //  Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -302,7 +283,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash10 = result10;
                     sumSalary += data.tbCash10;
                     data.Total = sumSalary;
-                   // Session["mydata"] = HomeController.data = data;
                 }
             }
             //1500 - 1700 4ex FBR color
@@ -314,7 +294,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash11 = result11;
                     sumSalary += data.tbCash11;
                     data.Total = sumSalary;
-                  //  Session["mydata"] = HomeController.data = data;
                 }
             }
             if (Request.Form["positions"] == "Оператор")
@@ -325,7 +304,6 @@ namespace Dirty_money_ASP.NET_MVC.Controllers
                     data.tbCash11 = result11;
                     sumSalary += data.tbCash11;
                     data.Total = sumSalary;
-                    //Session["mydata"] = HomeController.data = data;
                 }
             }          
             return View(data);
